@@ -1,0 +1,27 @@
+---
+import "../../styles/global.css";
+import TagDetailWrapper from '../../components/TagDetailWrapper.jsx';
+
+const tagId = Astro.params.tagId;
+
+if (!tagId) {
+  throw new Error('tagId no definido en la URL');
+}
+---
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap" rel="stylesheet">
+
+    <title>Etiqueta {tagId}</title>
+  </head>
+  <body>
+    <TagDetailWrapper client:load tagId={tagId} />
+  </body>
+</html>

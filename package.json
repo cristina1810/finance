@@ -1,0 +1,27 @@
+{
+  "name": "finance",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.75.0",
+    "@tailwindcss/vite": "^4.1.14",
+    "astro": "^5.14.5",
+    "dotenv": "^17.2.3",
+    "lucide-react": "^0.546.0",
+    "react-hook-form": "^7.65.0",
+    "react-router-dom": "^7.9.4",
+    "tailwindcss": "^4.1.14"
+  },
+  "devDependencies": {
+    "@astrojs/react": "^4.4.0",
+    "@astrojs/vercel": "^8.2.10",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  }
+}

@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+:root {
+  --primary: #a7f1c5;
+  --primary-expense: #f1a7a7;
+
+  --background-light: #f8f9fa;
+  --text-light: #495057;
+  --text-dark: #ffffff;
+  --light-gray: #f1f3f5;
+  --medium-gray: #dee2e6;
+  --dark-gray: #6c757d;
+  --income-light: #e8f5e9;
+  --income-dark: #a5d6a7;
+  --income-text: #388e3c;
+  --expense-light: #ffebee;
+  --expense-dark: #ef9a9a;
+  --expense-text: #e57373;
+  --benefit-light: #e3f2fd;
+  --benefit-dark: #90caf9;
+  --benefit-text: #42a5f5;
+  --green-accent: #51946c;
+  --bg-light: #f6f8f7;
+  --red-accent: #945151;
+  --red-light-bg: #f2e8e8;
+  --red-dark-bg: #3f2a2a;
+  --blue-accent: #6b7280;
+  --blue-light-bg: #e5e7eb;
+  --blue-dark-bg: #4b5563;
+  --blue-primary: #9ca3af;
+}
+body {
+  font-family: "Manrope", sans serif;
+  background-color: #f8f9fa;
+}
+.title {
+  font-family: "Merriweather", sans serif;
+  color: #f3c262;
+}
+/*  */
+.border,
+.rounded {
+  border-radius: 0.5rem;
+}
+.border-lg,
+.rounded-lg {
+  border-radius: 0.75rem;
+}
+.border-xl,
+.rounded-xl {
+  border-radius: 1rem;
+}
+.round {
+  border-radius: 1.5rem;
+}
+.border-full {
+}
+
+.swipe-container {
+  touch-action: none;
+}

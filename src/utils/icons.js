@@ -1,0 +1,73 @@
+// src/utils/icons.js
+import {
+  Wallet,
+  CreditCard,
+  PiggyBank,
+  ShoppingCart,
+  Home,
+  Car,
+  Coffee,
+  Gift,
+  Heart,
+  BookOpen,
+  Film,
+  Music,
+  FastFood,
+  Airplane,
+  Smartphone,
+  Tv,
+  Sun,
+  Moon,
+  Star,
+  Camera,
+  GiftCard,
+  Briefcase,
+  Umbrella,
+  Fire,
+  Leaf,
+  Tools,
+  Anchor,
+  Bell,
+  MapPin,
+  Globe,
+} from "lucide-react";
+
+// Array de iconos para selector
+export const icons = [
+  { name: "Wallet", component: Wallet },
+  { name: "CreditCard", component: CreditCard },
+  { name: "PiggyBank", component: PiggyBank },
+  { name: "ShoppingCart", component: ShoppingCart },
+  { name: "Home", component: Home },
+  { name: "Car", component: Car },
+  { name: "Coffee", component: Coffee },
+  { name: "Gift", component: Gift },
+  { name: "Heart", component: Heart },
+  { name: "BookOpen", component: BookOpen },
+  { name: "Film", component: Film },
+  { name: "Music", component: Music },
+  { name: "FastFood", component: FastFood },
+  { name: "Airplane", component: Airplane },
+  { name: "Smartphone", component: Smartphone },
+  { name: "Tv", component: Tv },
+  { name: "Sun", component: Sun },
+  { name: "Moon", component: Moon },
+  { name: "Star", component: Star },
+  { name: "Camera", component: Camera },
+  { name: "GiftCard", component: GiftCard },
+  { name: "Briefcase", component: Briefcase },
+  { name: "Umbrella", component: Umbrella },
+  { name: "Fire", component: Fire },
+  { name: "Leaf", component: Leaf },
+  { name: "Tools", component: Tools },
+  { name: "Anchor", component: Anchor },
+  { name: "Bell", component: Bell },
+  { name: "MapPin", component: MapPin },
+  { name: "Globe", component: Globe },
+];
+
+// Mapa de iconos por nombre para renderizar dinámicamente
+export const iconsMap = icons.reduce((acc, i) => {
+  acc[i.name] = i.component; // guardar directamente el JSX
+  return acc;
+}, {});
