@@ -27,7 +27,7 @@ const AccountCard = ({
       </div>
       <div className="flex flex-1 flex-col justify-center">
         <p className="text-text-light text-base font-medium">{title}</p>
-        <p className="text-dark-gray text-2xl font-bold">{amount}</p>
+        <p className="text-dark-gray text-2xl font-bold">{amount.toFixed(2)}</p>
       </div>
     </div>
     <div className="flex items-center gap-2">

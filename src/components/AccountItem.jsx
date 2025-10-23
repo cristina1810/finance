@@ -134,7 +134,7 @@ export default function AccountItem({ account, transactions, onDelete }) {
               {account.name}
             </a>
             <span className="text-[var(--dark-gray)] text-2xl font-bold">
-              {account.saldo} €
+              {account.saldo.toFixed(2)} €
             </span>
           </div>
         </div>
