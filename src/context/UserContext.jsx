@@ -1,4 +1,5 @@
-import { createContext, useContext, useState, useEffect } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
+import { supabase } from "../lib/supabaseClient"; // Asegúrate de tener este archivo creado
 
 const UserContext = createContext(undefined);
 
@@ -6,59 +7,56 @@ export function UserProvider({ children }) {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
+  // Al cargar la app, obtener la sesión actual y escuchar cambios
   useEffect(() => {
-    // Intentar cargar el usuario desde el estado
-    try {
-      const storedUser = sessionStorage.getItem("user");
-      if (storedUser && storedUser !== "undefined" && storedUser !== "null") {
-        const parsedUser = JSON.parse(storedUser);
-        setUser(parsedUser);
-      }
-    } catch (error) {
-      console.error("Error al cargar usuario:", error);
-      // Limpiar si hay datos corruptos
-      sessionStorage.removeItem("user");
-    } finally {
+    const initAuth = async () => {
+      const { data, error } = await supabase.auth.getSession();
+      if (error) console.error("Error al obtener la sesión:", error);
+      setUser(data?.session?.user ?? null);
       setLoading(false);
-    }
+    };
+
+    initAuth();
+
+    // Escuchar cualquier cambio de sesión (login, logout, refresh, etc.)
+    const { data: subscription } = supabase.auth.onAuthStateChange(
+      (_event, session) => {
+        setUser(session?.user ?? null);
+      }
+    );
+
+    return () => subscription.subscription.unsubscribe();
   }, []);
 
-  const login = (userData) => {
-    if (userData) {
-      setUser(userData);
-      try {
-        sessionStorage.setItem("user", JSON.stringify(userData));
-      } catch (error) {
-        console.error("Error al guardar usuario:", error);
-      }
-    }
+  // Login con email y contraseña
+  const login = async (email, password) => {
+    const { data, error } = await supabase.auth.signInWithPassword({
+      email,
+      password,
+    });
+    if (error) throw error;
+    setUser(data.user);
+    return data.user;
   };
 
-  const logout = () => {
+  // Logout
+  const logout = async () => {
+    const { error } = await supabase.auth.signOut();
+    if (error) console.error("Error al cerrar sesión:", error);
     setUser(null);
-    try {
-      sessionStorage.removeItem("user");
-    } catch (error) {
-      console.error("Error al eliminar usuario:", error);
-    }
   };
 
-  const value = {
-    user,
-    login,
-    logout,
-    loading,
-  };
-
-  return <UserContext.Provider value={value}>{children}</UserContext.Provider>;
+  return (
+    <UserContext.Provider value={{ user, loading, login, logout }}>
+      {children}
+    </UserContext.Provider>
+  );
 }
 
 export function useUser() {
   const context = useContext(UserContext);
-
-  if (context === undefined) {
-    throw new Error("useUser debe ser usado dentro de un UserProvider");
+  if (!context) {
+    throw new Error("useUser debe usarse dentro de un UserProvider");
   }
-
   return context;
 }
