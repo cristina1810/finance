@@ -8,11 +8,7 @@ import "dotenv/config";
 export default defineConfig({
   integrations: [react()],
   output: "server",
-  adapter: vercel({
-    edge: false,
-    includeFiles: [], // evita que intente enlazar cosas innecesarias
-    copyInsteadOfSymlink: true, // fuerza copiar dependencias
-  }),
+  adapter: vercel(),
   vite: {
     plugins: [tailwindcss()],
     optimizeDeps: {
