@@ -1,7 +1,7 @@
 import { e as createComponent, k as renderHead, l as renderComponent, r as renderTemplate } from '../chunks/astro/server_xzqXscmh.mjs';
 /* empty css                                       */
 import { jsx, jsxs } from 'react/jsx-runtime';
-import { u as useUser, U as UserProvider } from '../chunks/UserContext_yLHny9lX.mjs';
+import { u as useUser, U as UserProvider } from '../chunks/UserContext_BI7wIkIy.mjs';
 import { useState, useEffect } from 'react';
 import { Eye, EyeClosed } from 'lucide-react';
 export { renderers } from '../renderers.mjs';
@@ -146,7 +146,7 @@ function Register() {
         "button",
         {
           onClick: handleRegister,
-          disabled: isLoading || !email || !password || !username,
+          disabled: isLoading || !email || !password,
           className: "flex w-full items-center justify-center gap-2.5 rounded-xl bg-primary px-6 py-4 text-center text-lg font-bold text-black dark:text-background-dark mt-4 disabled:opacity-70 disabled:cursor-not-allowed",
           children: isLoading ? "Creando cuenta..." : "Crear Cuenta"
         }

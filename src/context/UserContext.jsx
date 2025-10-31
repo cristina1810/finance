@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react";
-import { supabase } from "../lib/supabaseClient"; // Asegúrate de tener este archivo creado
+import { supabase } from "../lib/supabase"; // Asegúrate de tener este archivo creado
 
 const UserContext = createContext(undefined);
 

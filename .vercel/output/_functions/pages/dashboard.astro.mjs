@@ -1,6 +1,6 @@
 import { e as createComponent, k as renderHead, l as renderComponent, r as renderTemplate } from '../chunks/astro/server_xzqXscmh.mjs';
 import { jsxs, jsx, Fragment } from 'react/jsx-runtime';
-import { u as useUser, U as UserProvider } from '../chunks/UserContext_yLHny9lX.mjs';
+import { u as useUser, U as UserProvider } from '../chunks/UserContext_BI7wIkIy.mjs';
 import { useState, useEffect } from 'react';
 import * as LucideIcons from 'lucide-react';
 import { Plus, Minus, ArrowLeftRight, IdCard, TrainFront, Sofa, Folder, Star, Heart, Wrench, Notebook, RefreshCw, Tickets, Smile, Baby, CreditCard, ShoppingCart, Wallet, PiggyBank, Apple, X, Tag, Check, Euro, Calendar, ChevronsUpDown, Menu, EyeOff, Receipt, Settings, LogOut } from 'lucide-react';
@@ -148,7 +148,7 @@ function AccountItem({ account, transactions, onDelete }) {
                 }
               ),
               /* @__PURE__ */ jsxs("span", { className: "text-[var(--dark-gray)] text-2xl font-bold", children: [
-                account.saldo,
+                account.saldo.toFixed(2),
                 " €"
               ] })
             ] })

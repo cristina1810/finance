@@ -2,7 +2,7 @@ import { e as createComponent, f as createAstro, k as renderHead, l as renderCom
 /* empty css                                          */
 import { jsx, jsxs } from 'react/jsx-runtime';
 import { useState, useEffect } from 'react';
-import { u as useUser, U as UserProvider } from '../../chunks/UserContext_yLHny9lX.mjs';
+import { u as useUser, U as UserProvider } from '../../chunks/UserContext_BI7wIkIy.mjs';
 import { IdCard, TrainFront, Sofa, Folder, Star, Heart, Wrench, Notebook, RefreshCw, Tickets, Smile, Baby, CreditCard, ShoppingCart, Wallet, PiggyBank, ArrowLeft, Edit2, Apple } from 'lucide-react';
 import { T as TransactionItem } from '../../chunks/TransactionItem_C3hq7KfM.mjs';
 export { renderers } from '../../renderers.mjs';

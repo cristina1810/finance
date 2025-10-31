@@ -1,7 +1,7 @@
 import { e as createComponent, k as renderHead, l as renderComponent, r as renderTemplate } from '../chunks/astro/server_xzqXscmh.mjs';
 /* empty css                                       */
 import { jsxs, jsx } from 'react/jsx-runtime';
-import { u as useUser, U as UserProvider } from '../chunks/UserContext_yLHny9lX.mjs';
+import { u as useUser, U as UserProvider } from '../chunks/UserContext_BI7wIkIy.mjs';
 import { useState } from 'react';
 import { PiggyBank, Mail, Lock } from 'lucide-react';
 export { renderers } from '../renderers.mjs';
